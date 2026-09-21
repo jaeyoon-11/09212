@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>underthesea</title>
+
+	<link rel="icon" href="shell.png">
+
+	<style>
+
+		body {
+			margin: 0;
+			width: 100%;
+			min-height: 120vh;
+
+			background: linear-gradient(
+				to bottom,
+				#FFFFFF,
+				#31FFE3,
+				#0088FF,
+				#0033FF
+			);
+
+			cursor: none;
+		}
+
+
+		.wrap {
+			width: 90%;
+			max-width: 1200px;
+			height: 100vh;
+			margin: auto;
+			position: relative;
+		}
+
+
+		#jellyfish {
+			width: 280px;
+			position: absolute;
+			left: 15%;
+			top: 77px;
+		}
+
+
+		#fish {
+			width: 350px;
+			position: absolute;
+			right: 6%;
+			top: 30%;
+		}
+
+
+		#conch {
+			width: 820px;
+			position: absolute;
+			left: 10%;
+			bottom: -120px;
+		}
+
+
+		#bubble {
+			width: 110px;
+			position: fixed;
+			pointer-events: none;
+			transform: translate(-50%, -50%);
+		}
+
+	</style>
+</head>
+
+
+<body>
+
+	<section>
+
+		<div class="wrap">
+
+			<img src="jellyfish.png" id="jellyfish">
+			<audio src="jellyfish.mp3" id="jsnd"></audio>
+
+
+			<img src="fish.png" id="fish">
+			<audio src="fish.mp3" id="fsnd"></audio>
+
+
+			<img src="conch.png" id="conch">
+			<audio src="conch.mp3" id="csnd"></audio>
+
+		</div>
+
+	</section>
+
+
+	<img src="bubble.png" id="bubble">
+
+
+	<script>
+
+		let jsound = "no";
+
+		jellyfish.onclick = function(){
+
+			if(jsound == "no"){
+				jsnd.play();
+				jellyfish.style.opacity = "0.5";
+				jsound = "yes";
+
+			}else if(jsound == "yes"){
+				jsnd.pause();
+				jellyfish.style.opacity = "1";
+				jsound = "no";
+			}
+
+		};
+
+
+		let fsound = "no";
+
+		fish.onclick = function(){
+
+			if(fsound == "no"){
+				fsnd.play();
+				fish.style.opacity = "0.5";
+				fsound = "yes";
+
+			}else if(fsound == "yes"){
+				fsnd.pause();
+				fish.style.opacity = "1";
+				fsound = "no";
+			}
+
+		};
+
+
+		let csound = "no";
+
+		conch.onclick = function(){
+
+			if(csound == "no"){
+				csnd.play();
+				conch.style.opacity = "0.5";
+				csound = "yes";
+
+			}else if(csound == "yes"){
+				csnd.pause();
+				conch.style.opacity = "1";
+				csound = "no";
+			}
+
+		};
+
+
+		document.addEventListener("mousemove", function(event){
+			bubble.style.left = event.clientX + "px";
+			bubble.style.top = event.clientY + "px";
+		});
+
+	</script>
+
+</body>
+</html>
